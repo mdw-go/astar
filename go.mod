@@ -1,4 +1,4 @@
-module github.com/mdwhatcott/advent-of-code/go/lib/astar
+module github.com/mdwhatcott/astar
 
 go 1.20
 
