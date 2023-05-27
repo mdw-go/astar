@@ -21,30 +21,30 @@ func NewPoint[T Numeric](x, y T) Point[T] {
 func (this Point[T]) String() string {
 	return fmt.Sprintf("[%v,%v]", this.X, this.Y)
 }
-func (this Point[T]) move(d direction[T]) Point[T] {
+func (this Point[T]) move(d Direction[T]) Point[T] {
 	return Point[T]{
-		X: this.X + d.dX,
-		Y: this.Y + d.dY,
+		X: this.X + d.DX,
+		Y: this.Y + d.DY,
 	}
 }
 
-type direction[T Numeric] struct {
-	dX T
-	dY T
+type Direction[T Numeric] struct {
+	DX T
+	DY T
 }
 
-func neighbors4[T Numeric]() []direction[T] {
-	return []direction[T]{
-		{dX: -1, dY: 0},
-		{dX: 1, dY: 0},
-		{dX: 0, dY: 1},
-		{dX: 0, dY: -1},
+func neighbors4[T Numeric]() []Direction[T] {
+	return []Direction[T]{
+		{DX: -1, DY: 0},
+		{DX: 1, DY: 0},
+		{DX: 0, DY: 1},
+		{DX: 0, DY: -1},
 	}
 }
-func cityBlockDistance[T Numeric](p, q Point[T]) int {
-	x, y := diff(p, q)
+func CityBlockDistance[T Numeric](p, q Point[T]) int {
+	x, y := Diff(p, q)
 	return int(math.Abs(x)) + int(math.Abs(y))
 }
-func diff[T Numeric](p, q Point[T]) (x, y float64) {
+func Diff[T Numeric](p, q Point[T]) (x, y float64) {
 	return float64(p.X - q.X), float64(p.Y - q.Y)
 }

@@ -19,7 +19,7 @@ func (this *turtle[T]) Search() (path []astar.Turtle, found bool) {
 	return astar.SearchFrom(this)
 }
 func (this *turtle[T]) EstimatedDistanceToTarget() float64 {
-	return float64(cityBlockDistance(this.from, this.to))
+	return float64(CityBlockDistance(this.from, this.to))
 }
 func (this *turtle[T]) AdjacentPositions() (results []astar.Turtle) {
 	for _, d := range neighbors4[T]() {
