@@ -1,4 +1,4 @@
-module github.com/mdwhatcott/astar
+module github.com/mdw-go/astar
 
 go 1.20
 

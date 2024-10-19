@@ -1,6 +1,6 @@
 package grid
 
-import "github.com/mdwhatcott/astar"
+import "github.com/mdw-go/astar"
 
 type turtle[T Numeric] struct {
 	grid map[Point[T]]struct{}
